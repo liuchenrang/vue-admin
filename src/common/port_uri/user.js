@@ -10,6 +10,6 @@
  */
 
 //用户登录
-export const login = "/api/post/user/login"
+export const login = "http://0.0.0.0:9997/admin/user/login"
 //用户登出
-export const logout = "/api/post/user/logout"
+export const logout = "http://0.0.0.0:9997/admin/user/logout"

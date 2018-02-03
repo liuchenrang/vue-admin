@@ -50,6 +50,7 @@
       //提交
       submit_form() {
         this.$refs.form.validate((valid) => {
+
           if (!valid) return false
           this.load_data = true
           //登录提交
