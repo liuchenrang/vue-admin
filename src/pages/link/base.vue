@@ -30,14 +30,14 @@
           label="名称"
           >
         </el-table-column>
-        <el-table-column
+       
+
+         <el-table-column
           prop="url"
           label="网址"
           >
-          <template slot-scope="props">
-            <span v-text="props.row.sex == 1 ? '男' : '女'"></span>
-          </template>
         </el-table-column>
+
         <el-table-column
           prop="description"
           label="描述"

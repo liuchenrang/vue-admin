@@ -25,7 +25,7 @@ const parseQueryString = (url) => {
 }
 
 import Mock from 'mockjs'
-import {port_code, port_table} from 'common/port_uri'
+import {port_code, port_table, link_list} from 'common/port_uri'
 
 // 姓名	性别	年龄	生日	地址
 
@@ -51,6 +51,10 @@ Mock.mock(new RegExp(port_table.list), ({url}) => {
     }
   })
 })
+// Mock.mock(new RegExp(link_list.list), ({url}) => {
+//   const params = parseQueryString(url)
+//   return {"succ":true,"code":0,"msg":"","data":{"result":[{"id":4,"title":"1","url":"1","cover":"","description":null,"sort":20,"createdAt":null,"updatedAt":null},{"id":3,"title":"123","url":"123","cover":"123","description":null,"sort":20,"createdAt":null,"updatedAt":null},{"id":2,"title":"title","url":"http://www.baidu.com","cover":"cover","description":"desp","sort":1,"createdAt":1528203798000,"updatedAt":1528203798000}],"total":3,"page":1}}
+// })
 
 Mock.mock(new RegExp(port_table.get), {
   code: port_code.success,
