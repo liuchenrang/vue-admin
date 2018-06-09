@@ -89,7 +89,7 @@
       options: {
         handler(options) {
           if (!this.chart && options) {
-            this._init()
+            this.initIndex()
           } else {
             this.chart.setOption(this.options, true)
           }
@@ -148,7 +148,7 @@
         }
         return this.chart[name](...args)
       },
-      _init() {
+      initIndex() {
         if (this.chart) return false
 
         this.dataLoading = true
@@ -194,7 +194,7 @@
     mounted() {
       // auto init if `options` is already provided
       if (this.options) {
-        this._init()
+        this.initIndex()
       }
     },
     beforeDestroy() {

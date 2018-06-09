@@ -36,6 +36,10 @@ import saveTableComponent from 'pages/table/save'
 //bar charts
 import barChartsComponent from 'pages/charts/bar'
 
+import linkTableComponent from 'pages/link/base'
+import saveLinkComponent from 'pages/link/save'
+
+
 Vue.use(VueRouter)
 
 //使用AMD方式加载
@@ -69,6 +73,22 @@ const routes = [{
     component: baseTableComponent,
     meta: {
       title: "基本表格",
+      auth: true
+    }
+  },{
+    path: '/link/base',
+    name: 'tableLink',
+    component: linkTableComponent,
+    meta: {
+      title: "友情链接",
+      auth: true
+    }
+  }, {
+    path: '/link/add',
+    name: 'linkAdd',
+    component: saveLinkComponent,
+    meta: {
+      title: "友情链接",
       auth: true
     }
   }, {

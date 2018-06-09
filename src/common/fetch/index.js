@@ -33,16 +33,14 @@ export default function fetch(options) {
       //设置请求超时设置
       timeout: 2000,
       //设置请求时的header
-      headers: {
-        'Github-url': 'https://github.com/zzmhot/vue-admin',
-        'X-Powered-By': 'zzmhot'
-      }
+     
     })
     //请求处理
     instance(options)
       .then(({data: {code, msg, data}}) => {
         //请求成功时,根据业务判断状态
         if (code === port_code.success) {
+          
           resolve({code, msg, data})
           return false
         } else if (code === port_code.unlogin) {
