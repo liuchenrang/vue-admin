@@ -49,10 +49,6 @@ module.exports = {
         }
       },
       {
-        test: /\.(html)$/,
-        loader: 'file-loader',
-      },
-      {
         test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
         loader: 'url-loader?limit=50000&name=[path][name].[ext]'
       }
@@ -81,7 +77,15 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html',
+      inject: 'body',
+      hash: true
+    })
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -102,11 +106,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      inject: 'body',
-      hash: true
     })
   ])
 }
