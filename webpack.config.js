@@ -6,6 +6,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
+    publicPath: "",
     filename: 'build.js'
   },
 
@@ -70,9 +71,15 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    clientLogLevel: "info",
-    port: 9000
+    port: 3030,
+    inline: true, 
+    hot: true, //开启热点
+    proxy:{
+        "/api": {
+            changeOrigin: true,
+            target: "https://www.sitemap-xml.cn",
+        }
+    }
   },
   performance: {
     hints: false

@@ -25,7 +25,7 @@ const parseQueryString = (url) => {
 }
 
 import Mock from 'mockjs'
-import {port_code, port_table, link_list} from 'common/port_uri'
+import {port_code, port_table, port_link} from 'common/port_uri'
 
 // 姓名	性别	年龄	生日	地址
 

@@ -13,12 +13,18 @@ import * as api_file from './file'
 import * as api_table from './table'
 import * as api_user from './user'
 import * as api_link from './link'
+import * as api_product from './product'
+import * as api_site from './site'
+import * as api_article from './article'
 
 const apiObj = {
   api_file,
   api_table,
   api_user,
-  api_link
+  api_link,
+  api_site,
+  api_article,
+  api_product
 }
 
 const install = function (Vue) {

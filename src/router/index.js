@@ -39,6 +39,16 @@ import barChartsComponent from 'pages/charts/bar'
 import linkTableComponent from 'pages/link/base'
 import saveLinkComponent from 'pages/link/save'
 
+import siteTableComponent from 'pages/site/base'
+import saveSiteComponent from 'pages/site/save'
+import productTableComponent from 'pages/product/base'
+import saveProductComponent from 'pages/product/save'
+
+import articleTableComponent from 'pages/article/base'
+import editArticleComponent from 'pages/article/save'
+
+
+
 
 Vue.use(VueRouter)
 
@@ -75,6 +85,74 @@ const routes = [{
       title: "基本表格",
       auth: true
     }
+    }, {
+      path: '/product/base',
+      name: 'tableProduct',
+      component: productTableComponent,
+      meta: {
+        title: "产品列表",
+        auth: true
+      }
+    }, {
+      path: '/product/add',
+      name: 'productAdd',
+      component: saveProductComponent,
+      meta: {
+        title: "新增产品",
+        auth: true
+      }
+    }
+    , {
+      path: '/article/base',
+      name: 'article',
+      component: articleTableComponent,
+      meta: {
+        title: "列表",
+        auth: true
+      }
+    }, {
+      path: '/article/add',
+      name: 'articleEdit',
+      component: editArticleComponent,
+      meta: {
+        title: "新增产品",
+        auth: true
+      }
+    }
+    , {
+      path: '/article/update/:id',
+      name: 'articleUpdate',
+      component: editArticleComponent,
+      meta: {
+        title: "编辑产品",
+        auth: true
+      }
+    }
+  ,{
+    path: '/product/update/:id',
+    name: 'productUpdate',
+    component: saveProductComponent,
+    meta: {
+      title: "编辑产品",
+      auth: true
+    }
+  }
+  ,{
+    path: '/site/base',
+    name: 'tableSite',
+    component: siteTableComponent,
+    meta: {
+      title: "网站列表",
+      auth: true
+    }
+  }, {
+    path: '/site/update/:id',
+    name: 'siteUpdate',
+    component: saveSiteComponent,
+    meta: {
+      title: "网站修改",
+      auth: true
+    }
   },{
     path: '/link/base',
     name: 'tableLink',
@@ -88,7 +166,7 @@ const routes = [{
     name: 'linkAdd',
     component: saveLinkComponent,
     meta: {
-      title: "友情链接",
+      title: "新建链接",
       auth: true
     }
   }, {

@@ -53,7 +53,7 @@
           label="操作"
           width="180">
           <template slot-scope="props">
-            <router-link :to="{name: 'tableUpdate', params: {id: props.row.id}}" tag="span">
+            <router-link :to="{name: 'siteUpdate', params: {id: props.row.id}}" tag="span">
               <el-button type="info" size="small" icon="edit">修改</el-button>
             </router-link>
             <el-button type="danger" size="small" icon="delete" @click="delete_data(props.row)">删除</el-button>
@@ -74,7 +74,7 @@
           <el-pagination
             @current-change="handleCurrentChange"
             :current-page="currentPage"
-            :page-size="10"
+            :page-size="length"
             layout="total, prev, pager, next"
             :total="total">
           </el-pagination>
@@ -140,7 +140,7 @@
         })
           .then(() => {
             this.load_data = true
-            this.$fetch.api_table.del(item)
+            this.$fetch.api_link.del(item)
               .then(({msg}) => {
                 this.get_table_data()
                 this.$message.success(msg)
@@ -169,7 +169,7 @@
         })
           .then(() => {
             this.load_data = true
-            this.$fetch.api_table.batch_del(this.batch_select)
+            this.$fetch.api_link.batch_del(this.batch_select)
               .then(({msg}) => {
                 this.get_table_data()
                 this.$message.success(msg)

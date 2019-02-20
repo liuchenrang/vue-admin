@@ -8,12 +8,12 @@
  *
  */
 import qs from 'qs'
-import fetch from 'common/fetch'
-import {link_list} from 'common/port_uri'
+import fetch from '../common/fetch'
+import {port_link} from '../common/port_uri'
 //数据列表
 export function list(params) {
   return fetch({
-    url: link_list.list,
+    url: port_link.list,
     method: 'get',
     params
   })
@@ -22,7 +22,7 @@ export function list(params) {
 //根据id查询数据
 export function get(params) {
   return fetch({
-    url: link_list.get,
+    url: port_link.get,
     method: 'get',
     params
   })
@@ -31,24 +31,30 @@ export function get(params) {
 //根据id删除数据
 export function del(data) {
   return fetch({
-    url: link_list.del,
-    method: 'post',
+    url: port_link.del + "/" + data['id'],
+    method: 'delete',
     data
   })
 }
 //添加或修改数据
 export function save(data) {
+  let method = ''
+  if("id" in data) {
+    method = "put"
+  }else{
+    method = "post"
+  }
   return fetch({
-    url: link_list.save,
-    method: 'post',
+    url: port_link.save,
+    method,
      data
   })
 }
 //批量删除
 export function batch_del(data) {
   return fetch({
-    url: link_list.batch_del,
-    method: 'post',
+    url: port_link.batch_del,
+    method: 'delete',
     data
   })
 }

@@ -47,20 +47,53 @@
       return {
         nav_menu_data: [{
           title: "主页",
-          path: "/home",
+          path: "/link/base",
           icon: "fa-home"
         }, {
-          title: "表格管理",
-          path: "/table",
+          title: "网站管理",
+          path: "/site",
           icon: "fa-table",
           child: [{
-            title: "基本表格",
-            path: "/table/base"
-          }, {
-            title: "排序表格",
-            path: "/table/sort"
+            title: "全部",
+            path: "/site/base"
           }]
         }, {
+          title: "商品管理",
+          path: "/product",
+          icon: "fa-table",
+          child: [{
+            title: "列表",
+            path: "/product/base"
+          },{
+            title: "新增",
+            path: "/product/add"
+          }]
+        }
+        , {
+          title: "文章管理",
+          path: "/article",
+          icon: "fa-table",
+          child: [{
+            title: "列表",
+            path: "/article/base"
+          },{
+            title: "新增",
+            path: "/article/add"
+          }]
+        }
+        , {
+          title: "友情链接",
+          path: "/link",
+          icon: "fa-table",
+          child: [{
+            title: "列表",
+            path: "/link/base"
+          },{
+            title: "新增",
+            path: "/link/add"
+          }]
+        }
+        , {
           title: "图表管理",
           path: "/charts",
           icon: "fa-bar-chart-o",
