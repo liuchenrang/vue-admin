@@ -95,7 +95,7 @@
         //数据总条目
         total: 0,
         //每页显示多少条数据
-        length: 15,
+        length: 30,
         //请求时的loading效果
         load_data: true,
         //批量选择数组
@@ -123,7 +123,6 @@
         })
           .then(({data: {result, page, total}}) => {
             this.table_data = result
-            this.currentPage = page
             this.total = total
             this.load_data = false
           })
